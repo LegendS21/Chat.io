@@ -142,6 +142,7 @@ export default function Chat({ socket, url }) {
         return [...current, newMessage, handleChat(roomId)];
       });
       setMessageSent("");
+      handleChat();
     });
 
     return () => {
@@ -268,6 +269,7 @@ export default function Chat({ socket, url }) {
                   style={{ fontSize: "20px", padding: "5px" }}
                   type="button" // Prevent form submission when clicking the emoji button
                   onClick={() => setEmojiPickerVisible(!emojiPickerVisible)}
+                  disabled={roomId == 0}
                 >
                   😊
                 </button>
