@@ -112,7 +112,7 @@ export default function Chat({ socket, url }) {
         );
       }
       handleChat(roomId);
-
+      
       setMessageSent("");
     } catch (error) {
       console.log(error);
@@ -142,7 +142,7 @@ export default function Chat({ socket, url }) {
         return [...current, newMessage, handleChat(roomId)];
       });
       setMessageSent("");
-      handleChat();
+      handleChat(roomId);
     });
 
     return () => {
